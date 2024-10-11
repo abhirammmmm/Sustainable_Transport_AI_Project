@@ -12,20 +12,16 @@
         <form action="/optimize" method="POST">
             <label for="source">Select Source City:</label>
             <select name="source" id="source" required>
-                <option value="Stockholm">Stockholm</option>
-                <option value="Uppsala">Uppsala</option>
-                <option value="Gothenburg">Gothenburg</option>
-                <option value="Malmo">Malmo</option>
-                <option value="Vasteras">Vasteras</option>
+                {% for city in cities %}
+                <option value="{{ city }}">{{ city }}</option>
+                {% endfor %}
             </select>
 
             <label for="destination">Select Destination City:</label>
             <select name="destination" id="destination" required>
-                <option value="Stockholm">Stockholm</option>
-                <option value="Uppsala">Uppsala</option>
-                <option value="Gothenburg">Gothenburg</option>
-                <option value="Malmo">Malmo</option>
-                <option value="Vasteras">Vasteras</option>
+                {% for city in cities %}
+                <option value="{{ city }}">{{ city }}</option>
+                {% endfor %}
             </select>
 
             <button type="submit">Find Route</button>
@@ -34,6 +30,9 @@
         {% if error %}
         <div class="error">{{ error }}</div>
         {% endif %}
+        <form action="/visualize" method="get">
+            <button type="submit">Visualize City Graph</button>
+        </form>
     </div>
 </body>
 </html>
