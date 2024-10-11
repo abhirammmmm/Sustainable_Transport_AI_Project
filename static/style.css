@@ -13,14 +13,34 @@ body {
     max-width: 500px;
     margin: auto;
 }
-.container_g {
-    background: #e7e7e7;
+
+.optimal-path {
+    background-color: #d4edda;
     padding: 20px;
+    border: 1px solid #c3e6cb;
     border-radius: 5px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    max-width: 650px;
-    margin: auto;
+    margin-bottom: 20px;
 }
+
+.other-paths {
+    background-color: #f8d7da;
+    padding: 20px;
+    border: 1px solid #f5c6cb;
+    border-radius: 5px;
+}
+
+.other-paths ul {
+    list-style: none;
+    padding: 0;
+}
+
+.other-paths li {
+    background-color: #f1f1f1;
+    margin-bottom: 15px;
+    padding: 10px;
+    border-radius: 5px;
+}
+
 h1, h2, h3 {
     color: #333;
 }
