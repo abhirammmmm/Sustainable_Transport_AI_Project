@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Route Optimizer</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Route Optimizer</h1>
+        <form action="/optimize" method="POST">
+            <label for="source">Select Source City:</label>
+            <select name="source" id="source" required>
+                <option value="Stockholm">Stockholm</option>
+                <option value="Uppsala">Uppsala</option>
+                <option value="Gothenburg">Gothenburg</option>
+                <option value="Malmo">Malmo</option>
+                <option value="Vasteras">Vasteras</option>
+            </select>
+
+            <label for="destination">Select Destination City:</label>
+            <select name="destination" id="destination" required>
+                <option value="Stockholm">Stockholm</option>
+                <option value="Uppsala">Uppsala</option>
+                <option value="Gothenburg">Gothenburg</option>
+                <option value="Malmo">Malmo</option>
+                <option value="Vasteras">Vasteras</option>
+            </select>
+
+            <button type="submit">Find Route</button>
+        </form>
+
+        {% if error %}
+        <div class="error">{{ error }}</div>
+        {% endif %}
+    </div>
+</body>
+</html>
