@@ -40,7 +40,7 @@ Project Structure of: Sustainable_Transport_AI_Project
 1. **Download the project**:
     - You can either clone the repository using Git:
       ```bash
-      git clone <repository-url>
+      gh repo clone abhirammmmm/Sustainable_Transport_AI_Project
       ```
     - Or download the project as a ZIP file from GitHub and unzip it.
 
