@@ -5,34 +5,42 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Route Optimizer</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
 </head>
 <body>
-    <div class="container">
-        <h1>Route Optimizer</h1>
-        <form action="/optimize" method="POST">
-            <label for="source">Select Source City:</label>
-            <select name="source" id="source" required>
-                {% for city in cities %}
-                <option value="{{ city }}">{{ city }}</option>
-                {% endfor %}
-            </select>
+    <div class="main-container">
+        <div class="form-container">
+            <h1>Route Optimizer</h1>
+            <form action="/optimize" method="POST">
+                <label for="source">Select Source City:</label>
+                <select name="source" id="source" required>
+                    {% for city in cities %}
+                    <option value="{{ city }}">{{ city }}</option>
+                    {% endfor %}
+                </select>
 
-            <label for="destination">Select Destination City:</label>
-            <select name="destination" id="destination" required>
-                {% for city in cities %}
-                <option value="{{ city }}">{{ city }}</option>
-                {% endfor %}
-            </select>
+                <label for="destination">Select Destination City:</label>
+                <select name="destination" id="destination" required>
+                    {% for city in cities %}
+                    <option value="{{ city }}">{{ city }}</option>
+                    {% endfor %}
+                </select>
 
-            <button type="submit">Find Route</button>
-        </form>
+                <button type="submit">Find Route</button>
+            </form>
 
-        {% if error %}
-        <div class="error">{{ error }}</div>
-        {% endif %}
-        <form action="/visualize" method="get">
-            <button type="submit">Visualize City Graph</button>
-        </form>
+            {% if error %}
+            <div class="error">{{ error }}</div>
+            {% endif %}
+        </div>
+
+        <div class="visualize-container">
+            <h2>Visualize City Connections</h2>
+            <p>Explore the graph of city connections used in this project.</p>
+            <form action="/visualize" method="get">
+                <button class="visualize-btn" type="submit">Visualize Graph</button>
+            </form>
+        </div>
     </div>
 </body>
 </html>

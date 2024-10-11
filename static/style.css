@@ -5,13 +5,85 @@ body {
     padding: 20px;
 }
 
-.container {
+/* Main container for both form and visualize sections */
+.main-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    max-width: 1000px;
+    margin: auto;
+}
+
+.form-container {
     background: #fff;
     padding: 20px;
     border-radius: 5px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    max-width: 500px;
-    margin: auto;
+    width: 60%;
+}
+
+.visualize-container {
+    background: #e9ecef;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 35%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.visualize-btn {
+    background-color: #007bff;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.visualize-btn:hover {
+    background-color: #0056b3;
+}
+
+/* Navigation icons at the top of result and visualize pages */
+.navigation-icons {
+    display: flex;
+    justify-content: flex-start;
+    gap: 20px;
+    margin-bottom: 20px;
+}
+
+.navigation-icons a {
+    text-decoration: none;
+    color: #333;
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+}
+
+.navigation-icons a:hover {
+    color: #007bff;
+}
+
+.navigation-icons i {
+    margin-right: 5px;
+}
+
+/* For result and visualize containers */
+.container {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    max-width: 600px;
+    margin: 40px auto;
+}
+
+.optimal-path, .other-paths {
+    margin-bottom: 20px;
 }
 
 .optimal-path {
@@ -19,7 +91,6 @@ body {
     padding: 20px;
     border: 1px solid #c3e6cb;
     border-radius: 5px;
-    margin-bottom: 20px;
 }
 
 .other-paths {
@@ -76,13 +147,49 @@ button:hover {
     text-align: center;
 }
 
-.back-link {
-    display: inline-block;
-    margin-top: 20px;
-    color: #007bff;
-    text-decoration: none;
+.container_g {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    max-width: 800px;
+    margin: 40px auto;
+    text-align: center;
 }
 
-.back-link:hover {
-    text-decoration: underline;
+.image-container {
+    margin-top: 20px;
+}
+
+.image-container img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Mobile responsiveness for both index and visualize pages */
+@media (max-width: 768px) {
+    .main-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .form-container, .visualize-container {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    .visualize-container {
+        padding: 15px;
+    }
+
+    .container, .container_g {
+        width: 90%;
+        padding: 15px;
+    }
+
+    .navigation-icons {
+        justify-content: center;
+    }
 }
