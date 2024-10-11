@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Route Result</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Route Optimization Result</h1>
+        <h2>Optimal Path: {{ path | join(", ") }}</h2>
+        <h3>Total Fuel Consumption: {{ total_fuel }} liters</h3>
+        <a class="back-link" href="/">Go Back</a>
+    </div>
+</body>
+</html>
