@@ -8,10 +8,10 @@
 </head>
 <body>
     <div class="container">
-        <h1>Route Optimization Result</h1>
-        <h2>Optimal Path: {{ path | join(", ") }}</h2>
-        <h3>Total Fuel Consumption: {{ total_fuel }} liters</h3>
-        <a class="back-link" href="/">Go Back</a>
+        <h1>Route Optimized</h1>
+        <p><strong>Path:</strong> {{ path | join(' -> ') }}</p>
+        <p><strong>Total Fuel Consumption:</strong> {{ total_fuel }} units</p>
+        <a href="/">Back to Home</a>
     </div>
 </body>
 </html>
