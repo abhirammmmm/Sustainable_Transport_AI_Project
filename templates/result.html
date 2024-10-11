@@ -8,9 +8,32 @@
 </head>
 <body>
     <div class="container">
-        <h1>Route Optimized</h1>
-        <p><strong>Path:</strong> {{ path | join(' -> ') }}</p>
-        <p><strong>Total Fuel Consumption:</strong> {{ total_fuel }} units</p>
+        <h1>Optimized Route Result</h1>
+        
+        <!-- Display optimal path -->
+        <div class="optimal-path">
+            <h2>Best Path (Optimal Fuel Consumption)</h2>
+            <p><strong>Path:</strong> {{ optimal_path[0] | join(' -> ') }}</p>
+            <p><strong>Total Distance:</strong> {{ optimal_path[1] }} km</p>
+            <p><strong>Fuel Consumed:</strong> {{ optimal_path[2] }} liters (approx.)</p>
+        </div>
+
+        <!-- Display other paths if available -->
+        {% if other_paths %}
+        <div class="other-paths">
+            <h2>Other Possible Paths</h2>
+            <ul>
+                {% for path, distance, fuel in other_paths %}
+                <li>
+                    <p><strong>Path:</strong> {{ path | join(' -> ') }}</p>
+                    <p><strong>Total Distance:</strong> {{ distance }} km</p>
+                    <p><strong>Fuel Consumed:</strong> {{ fuel }} liters (approx.)</p>
+                </li>
+                {% endfor %}
+            </ul>
+        </div>
+        {% endif %}
+
         <a href="/">Back to Home</a>
     </div>
 </body>
